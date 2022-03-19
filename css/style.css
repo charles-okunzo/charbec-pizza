@@ -4,7 +4,10 @@
 }
 
 body{
-  background-color: #212529;
+  background-color: rgb(33, 37, 41);
+}
+nav{
+  background-color: rgba(33,37,41,0.5);
 }
 
 .bg-img{
@@ -17,7 +20,6 @@ body{
 
 span{
   font-family: 'Cookie', cursive;
-  color: #00ECFF;
 }
 
 #img-tag{
@@ -28,4 +30,11 @@ hr{
   color: #00ECFF;
   width: 80%;
   margin: auto;
+}
+
+option{
+  color: #212529;
+}
+input[type="submit"]{
+  width: 100%;
 }
