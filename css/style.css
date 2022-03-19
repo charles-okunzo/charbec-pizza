@@ -3,6 +3,10 @@
   color: #fff;
 }
 
+span{
+  font-family: 'Pacifico', cursive;
+}
+
 body{
   background-color: rgb(33, 37, 41);
 }
@@ -16,10 +20,6 @@ nav{
   background-repeat: no-repeat;
   background-size: cover;
   color: 	#fff;
-}
-
-span{
-  font-family: 'Poppins', sans-serif;
 }
 
 #img-tag{
@@ -42,4 +42,8 @@ option{
 
 .order-form{
   background-color:#272b2e;
+}
+
+footer{
+  background-color: #000;
 }
