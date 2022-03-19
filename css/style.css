@@ -35,6 +35,6 @@ hr{
 option{
   color: #212529;
 }
-input[type="submit"]{
+.sendBtn{
   width: 100%;
 }

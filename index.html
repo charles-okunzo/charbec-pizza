@@ -75,17 +75,17 @@
   </div>
 
   <div class="container">
-    <div class="row mt-4">
-      <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-6 mt-4">
         <h2 class="text-center py-4">PLACE ORDER NOW!</h2>
         <form>
           <div class="input-group mb-3">
             <label for="size" class="input-group-text"> Pizza Size</label>
             <select name="" id="size" class="form-select">
               <option selected>Choose size...</option>
-              <option value="">Large</option>
-              <option value="">Medium</option>
-              <option value="">Small</option>
+              <option value="large">Large @ Ksh.1,500</option>
+              <option value="medium">Medium @ Ksh. 900</option>
+              <option value="small">Small @ Ksh.650</option>
             </select>
           </div>
 
@@ -93,9 +93,9 @@
             <label for="crusts" class="input-group-text">Crusts</label>
             <select name="" id="crusts" class="form-select">
               <option selected>Choose Crust...</option>
-              <option value="">Crispy</option>
-              <option value="">Stuffed</option>
-              <option value="">Glutten-free</option>
+              <option value="">Crispy @ Ksh.200</option>
+              <option value="">Stuffed @ Ksh.300</option>
+              <option value="">Glutten-free @ Ksh.250</option>
             </select>
           </div>
 
@@ -125,8 +125,82 @@
             <input type="checkbox" class="form-check-input" name="toppings" id="pepper">
             <label for="pepper" class="form-check-label">Green Pepper</label>
           </div>
-          <input type="submit" value="CHECKOUT" class="btn btn-outline-info my-3">
+          <div class="input-group mb-3">
+            <label for="delivery" class="input-group-text">Delivery Mode</label>
+            <select name="" id="delivery" class="form-select">
+              <option selected>Choose delivery...</option>
+              <option value="">Home delivery</option>
+              <option value="">Hand-Picked</option>
+            </select>
+          </div>
+          <input type="submit" value="CHECKOUT" class="btn btn-outline-info my-3 sendBtn" id="checkoutBtn">
         </form>
+      </div>
+
+      <div class="col-md-6 mt-4">
+        <h3 class="text-center">
+          YOUR ORDER(s)
+        </h3>
+        <table class="table table-dark table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Size</th>
+              <th scope="col">Crust</th>
+              <th scope="col">Toppings</th>
+              <th scope="col">Units</th>
+              <th scope="col">Total (Ksh)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Large</td>
+              <td>Gluten_free</td>
+              <td>Mushroom</td>
+              <td>2</td>
+              <td>900</td>
+            </tr>
+            <tr>
+              <td>Large</td>
+              <td>Gluten_free</td>
+              <td>Mushroom</td>
+              <td>2</td>
+              <td>900</td>
+            </tr>
+            <tr>
+              <td colspan="4">Grand Total</td>
+              <td>1800</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <input type="submit" value="ADD" class="btn btn-outline-info my-3">
+
+        <form>
+          <h3 class="text-center">Delivery Address</h3>
+          <div>
+            <label for="fName" class="form-label">Name :</label>
+            <input type="text" class="form-control" id="fName" placeholder="
+            Enter your name...">
+          </div>
+
+          <div>
+            <label for="pNumber" class="form-label">Phone No. :</label>
+            <input type="text" class="form-control" id="pNumber" placeholder="
+            Enter your phone number e.g. 0712345678">
+          </div>
+
+          <div>
+            <label for="location" class="form-label">Location :</label>
+            <input type="text" class="form-control" id="location" placeholder="
+            Location e.g. Pipeline, Nairobi">
+          </div>
+        </form>
+        <input type="submit" value="CONFIRM ORDER" class="btn btn-outline-info my-3 sendBtn">
+
+        <!-- output display -->
+        <div id="output">
+
+        </div>
       </div>
     </div>
   </div>
