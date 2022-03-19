@@ -19,3 +19,13 @@ span{
   font-family: 'Cookie', cursive;
   color: #00ECFF;
 }
+
+#img-tag{
+  width: 100%;
+}
+
+hr{
+  color: #00ECFF;
+  width: 80%;
+  margin: auto;
+}
