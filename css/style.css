@@ -47,3 +47,7 @@ option{
 footer{
   background-color: #000;
 }
+
+.hide-elem{
+  display: none;
+}

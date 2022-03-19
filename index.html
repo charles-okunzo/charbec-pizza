@@ -140,44 +140,46 @@
       </div>
 
       <div class="col-md-6 mt-4">
-        <h3 class="text-center">
-          YOUR ORDER(s)
-        </h3>
-        <table class="table table-dark table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Size</th>
-              <th scope="col">Crust</th>
-              <th scope="col">Toppings</th>
-              <th scope="col">Units</th>
-              <th scope="col">Total (Ksh)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Large</td>
-              <td>Gluten_free</td>
-              <td>Mushroom</td>
-              <td>2</td>
-              <td>900</td>
-            </tr>
-            <tr>
-              <td>Large</td>
-              <td>Gluten_free</td>
-              <td>Mushroom</td>
-              <td>2</td>
-              <td>900</td>
-            </tr>
-            <tr>
-              <td colspan="4">Grand Total</td>
-              <td>1800</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="hide-elem">
+          <h3 class="text-center">
+            YOUR ORDER(s)
+          </h3>
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Size</th>
+                <th scope="col">Crust</th>
+                <th scope="col">Toppings</th>
+                <th scope="col">Units</th>
+                <th scope="col">Total (Ksh)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Large</td>
+                <td>Gluten_free</td>
+                <td>Mushroom</td>
+                <td>2</td>
+                <td>900</td>
+              </tr>
+              <tr>
+                <td>Large</td>
+                <td>Gluten_free</td>
+                <td>Mushroom</td>
+                <td>2</td>
+                <td>900</td>
+              </tr>
+              <tr>
+                <td colspan="4">Grand Total</td>
+                <td>1800</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        <input type="submit" value="ADD" class="btn btn-outline-info my-3">
+        <input type="submit" value="ADD" class="btn btn-outline-info my-3 hide-elem">
 
-        <form>
+        <form class="hide-elem">
           <h3 class="text-center">Delivery Address</h3>
           <div>
             <label for="fName" class="form-label">Name :</label>
@@ -197,7 +199,7 @@
             Location e.g. Pipeline, Nairobi">
           </div>
         </form>
-        <input type="submit" value="CONFIRM ORDER" class="btn btn-outline-info my-3 sendBtn">
+        <input type="submit" value="CONFIRM ORDER" class="btn btn-outline-info my-3 sendBtn hide-elem">
 
         <!-- output display -->
         <div id="output">
@@ -209,21 +211,21 @@
 
 
   <div class="container">
-    <div class="row mt-4">
-      <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-6 py-5">
         <h3 class="">Get In Touch</h3>
         <ul class="list-unstyled ">
           <li><a href="tel:+254712464800" class="nav-link text-white"><i class="fas fa-phone"></i> +254 (0) 712 464 800</a></li>
           <li><a href="mailto:charles.okunzo@student.moringaschool.com" class="nav-link text-white"><i class="fas fa-envelope"></i> Okunzo Email</a></li>
-          <li><a href="http://" class="nav-link text-white"><i class="fas fa-map-marker-alt"></i> Kenyatta Market along Thika Rd.</a></li>
+          <li><a class="nav-link text-white"><i class="fas fa-map-marker-alt"></i> Kenyatta Market along Thika Rd.</a></li>
           
         </ul>
       </div>
 
-      <div class="col-md-6">
-        <h3>Follow Us</h3>
+      <div class="col-md-6 py-5">
+        <h3 class="pb-4">Follow Us</h3>
         <div>
-          <a href="https://twitter.com/OkunzoCharlo"><i class="fa-brands fa-twitter px-3"></i></a> | <a href="https://ke.linkedin.com/in/charles-p-okunzo-2b90b8196"><i class="fa-brands fa-linkedin px-3"></i></a> | <a href="https://app.slack.com/client/T0101L740P4/C010GLANY3A/user_profile/U02TTFQ0VJR" class="text-decoration-none" target="_blank"><i class="fa-brands fa-slack px-3"></i></a> | <a href="mailto:charles.okunzo@student.moringaschool.com" target="_blank" class="text-decoration-none"><i class="fa-solid fa-envelope px-3"></i></a>
+          <a href="https://twitter.com/OkunzoCharlo"><i class="fa-brands fa-twitter px-3"></i></a> | <a href="https://ke.linkedin.com/in/charles-p-okunzo-2b90b8196"><i class="fa-brands fa-linkedin px-3"></i></a> | <a href="https://app.slack.com/client/T0101L740P4/C010GLANY3A/user_profile/U02TTFQ0VJR" class="text-decoration-none" target="_blank"><i class="fa-brands fa-slack px-3"></i></a> | <a href="https://web.facebook.com/petro-okush" target="_blank" class="text-decoration-none"><i class="fa-brands fa-facebook px-3"></i></a>
         </div>
       </div>
     </div>
