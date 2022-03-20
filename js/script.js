@@ -62,10 +62,11 @@ Pizza.prototype.getCrustPrice=function(){
 }
 
 Pizza.prototype.getToppingsPrice=function(){
-  let arr =[];
-  arr.push(this.toppings);
-  let toppingsAmt= arr.length;
-  return toppingsAmt*200;
+  let sumTotal=0;
+  this.toppings.forEach(item => {
+     sumTotal+=parseFloat(item.value);
+  });
+  return sumTotal;
 }
 
 
@@ -80,6 +81,8 @@ $('#user-order-form').submit((e)=>{
 
   $('#order-confirmBtn').slideToggle(1000)
 
+
+  //show form for home delivery && hide form for hand pickup
   let delivery= $('#delivery').val();
   if(delivery==='home-d'){
     $('#delivery-address').slideToggle(1000);
@@ -88,8 +91,28 @@ $('#user-order-form').submit((e)=>{
   }
 
   //get user input value
-let userInputSize= $('#size').val();
+  let userInputSize= $('#size').val();
 
-let userInputCrust=$('')
-// console.log($('form#user-order-form').serializeArray())
+  let userInputCrust=$('#crusts').val();
+  //.serializeArray returns an array of input objects.
+  let userInputToppings= $('form#user-order-form').serializeArray();
+
+  let unitsOrdered= parseFloat($('#noOfPizza').val());
+
+  //create a new user array object
+
+  let newUserOrderedPizza= new Pizza(userInputSize, userInputCrust, userInputToppings, unitsOrdered, delivery);
+
+  console.log(newUserOrderedPizza.getToppingsPrice())
+
+
+
+
+
+
+  // userInputToppings.forEach(element => {
+  //   console.log(element.name);
+  // });
+  // console.log(userInputToppings.length)
+  // console.log($('form#user-order-form').serializeArray())
 })
