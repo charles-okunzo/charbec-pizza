@@ -86,12 +86,22 @@ Pizza.prototype.getToppingsNames=function(){
   toppingsArr.forEach(item=>{
     newArr.push(item.name);
   })
-  $('td#tNList').text(newArr.join(', '))
+  return newArr.join(', ')
+}
+
+//get delivery price
+
+Pizza.prototype.getDeliveryPrice=function(){
+  if(this.delivery==='home-d'){
+    return Math.floor(Math.random()*300)
+  }else{
+    return 0;
+  }
 }
 
 
 //order form submission
-$('#user-order-form').submit((e)=>{
+$('.user-order-click').click((e)=>{
   e.preventDefault();
  
   //get user input value
@@ -105,22 +115,26 @@ $('#user-order-form').submit((e)=>{
 
   let delivery= $('#delivery').val();
 
- // $('#checkoutBtn').fadeToggle(1000);
+//  $('#checkoutBtn').fadeOut(1000);
       
-    $('#order-display').slideToggle(1000);
+    $('#order-display').slideDown(1000);
 
-    $('#addBtn').slideToggle(1000);
+    $('#addBtn').slideDown(1000);
 
-    $('#order-confirmBtn').slideToggle(1000)
+    $('#order-confirmBtn').slideDown(1000)
 
 
     //show form for home delivery && hide form for hand pickup
     if(delivery==='home-d'){
-      $('#delivery-address').slideToggle(1000);
+      $('#delivery-address').slideDown(1000);
     }else{
       $('#delivery-address').hide();
     }
 
+    if(unitsOrdered===0){
+      alert("Err:Enter a valid input");
+      return;
+    }
 
      //create a new user array object
     let newUserOrderedPizza= new Pizza(userInputSize, userInputCrust, userInputToppings, unitsOrdered, delivery);
@@ -129,11 +143,21 @@ $('#user-order-form').submit((e)=>{
 
     let toppingsNamesList= newUserOrderedPizza.getToppingsNames();
 
-    $('tbody').prepend(`<tr><td>${userInputSize}</td><td>${userInputCrust}</td><td id='tNList'>${toppingsNamesList}</td><td>${unitsOrdered}</td><td>${total}</td></tr>`)
+    $('tbody').prepend(`<tr><td>${userInputSize}</td><td>${userInputCrust}</td><td id='tNList'>${toppingsNamesList}</td><td>${unitsOrdered}</td><td class="totalVal">${total}</td></tr>`)
 
 
-newUserOrderedPizza.getToppingsNames();
 
+
+console.log(newUserOrderedPizza.getDeliveryPrice())
+
+
+  //  let agsum=0;
+  //  let grand=document.querySelectorAll('.totalVal');
+
+  //  console.log(grand)
+
+  //  grand.forEach(item=>console.log(item.value))
+  //  console.log(grand)
 
   // userInputToppings.forEach(element => {
   //   console.log(element.name);
@@ -141,3 +165,4 @@ newUserOrderedPizza.getToppingsNames();
   // console.log(userInputToppings.length)
   // console.log($('form#user-order-form').serializeArray())
 })
+
