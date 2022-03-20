@@ -5,6 +5,7 @@
 
 span{
   font-family: 'Pacifico', cursive;
+  color: #ff304f !important;
 }
 
 body{
@@ -15,7 +16,7 @@ nav{
 }
 
 .bg-img{
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(216, 46, 46, 0.5)), url('../assets/pizza-08.jpg');
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0, 0, 0, 0.6)), url('../assets/pizza-08.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -27,9 +28,8 @@ nav{
 }
 
 hr{
-  color: #00ECFF;
+  color: #ff304f;
   width: 80%;
-  margin: auto;
 }
 
 option{
@@ -54,4 +54,14 @@ footer{
 
 .grandTotal td{
   color: rgb(32, 255, 32);
+}
+
+.btn-outline-info{
+  border-color: #ff304f !important;
+  color: #fff !important;
+}
+
+.btn-outline-info:hover{
+ background-color: #ff304f !important;
+  color: #fff !important;
 }

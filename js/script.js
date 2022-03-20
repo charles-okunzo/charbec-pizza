@@ -115,7 +115,7 @@ $('#user-order-form').submit((e)=>{
 
   let delivery= $('#delivery').val();
 
-//  $('#checkoutBtn').fadeOut(1000);
+    $('#checkoutBtn').fadeOut(1000);
       
     $('#order-display').slideDown(1000);
 
@@ -182,7 +182,7 @@ $('#order-confirmBtn').click(()=>{
       $('#resetBtn').fadeIn(1000);
       
 
-      $('#output').text(`Dear ${userName}, Your Order has been received and will be delivered to ${userLocation} within 30min. Your total charge is Ksh.${total}`)
+      $('#output').append(`<span>SUCCESS!</span> <br>Dear ${userName}, Your Order has been received and will be delivered to ${userLocation} within 30min. Your total charge is Ksh.${total}`)
 
       // $('#resetBtn').click(()=>{
       //   $('.oderRow').fadeIn(500);
@@ -191,10 +191,10 @@ $('#order-confirmBtn').click(()=>{
     }
   }else{
     $('.oderRow').hide();
-    $('#output').fadeIn();
-    $('#resetBtn').fadeIn(1000);
+    $('#output').fadeIn(500);
+    $('#resetBtn').fadeIn(500);
 
-    $('#output').text(`Dear Customer, Your Order has been received. You can pick it within 30min. Your total charge is ${total}`)
+    $('#output').append(`<span>SUCCESS!</span> <br> Dear Customer, Your Order has been received. You can pick it within 30min. Your total charge is Ksh.${total}`)
 
     // $('#resetBtn').click(()=>{
     //   $('.oderRow').fadeIn(500);
@@ -243,7 +243,9 @@ $('#order-confirmBtn').click(()=>{
   // console.log($('form#user-order-form').serializeArray())
 })
 
-
+//Event when reset button is clicked
 $('#resetBtn').click(()=>{
-  $('.oderRow').fadeIn(500);
+  $('.oderRow').fadeIn();
+  $('#output').fadeOut();
+  $('#resetBtn').fadeOut();
 })
