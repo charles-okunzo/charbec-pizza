@@ -78,6 +78,17 @@ Pizza.prototype.calcTotalPrice=function(){
   return totalPrice;
 }
 
+//get output for the toppings names selected
+
+Pizza.prototype.getToppingsNames=function(){
+  let toppingsArr= this.toppings;
+  let newArr=[];
+  toppingsArr.forEach(item=>{
+    newArr.push(item.name);
+  })
+  $('td#tNList').text(newArr.join(', '))
+}
+
 
 //order form submission
 $('#user-order-form').submit((e)=>{
@@ -116,10 +127,12 @@ $('#user-order-form').submit((e)=>{
     //total for each order
     let total=newUserOrderedPizza.calcTotalPrice();
 
-    $('tbody').prepend(`<tr><td>${userInputSize}</td><td>${userInputCrust}</td><td>${userInputToppings}</td><td>${unitsOrdered}</td><td>${total}</td></tr>`)
+    let toppingsNamesList= newUserOrderedPizza.getToppingsNames();
+
+    $('tbody').prepend(`<tr><td>${userInputSize}</td><td>${userInputCrust}</td><td id='tNList'>${toppingsNamesList}</td><td>${unitsOrdered}</td><td>${total}</td></tr>`)
 
 
-
+newUserOrderedPizza.getToppingsNames();
 
 
   // userInputToppings.forEach(element => {
