@@ -65,3 +65,19 @@ footer{
  background-color: #ff304f !important;
   color: #fff !important;
 }
+.comment-sect{
+  width: 100%;
+  background-color: transparent !important;
+  color: #fff !important;
+  border-color: #ff304f;
+}
+
+.comment-sect::placeholder,.comment-sect:focus{
+  color: #fff;
+  background-color: transparent !important;
+}
+
+.fas:hover, .fa-brands:hover{
+  font-size: 20px;
+  color: #ff304f;
+}
