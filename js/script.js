@@ -101,7 +101,7 @@ Pizza.prototype.getDeliveryPrice=function(){
 
 
 //order form submission
-$('.user-order-click').click((e)=>{
+$('#user-order-form').submit((e)=>{
   e.preventDefault();
  
   //get user input value
@@ -145,12 +145,89 @@ $('.user-order-click').click((e)=>{
 
     $('tbody').prepend(`<tr><td>${userInputSize}</td><td>${userInputCrust}</td><td id='tNList'>${toppingsNamesList}</td><td>${unitsOrdered}</td><td class="totalVal">${total}</td></tr>`)
 
+    $('.g-total').text(total);
 
 
 
-console.log(newUserOrderedPizza.getDeliveryPrice())
+
+//constructor function for address
+
+function Address(name, phoneNo, location){
+  this.name=name;
+  this.phoneNo=phoneNo;
+  this.location=location;
+}
+
+$('#order-confirmBtn').click(()=>{
+  
+  //get address form fields input
+
+  let userName=$('#fName').val();
+  let userNo=$('#pNumber').val();
+  let userLocation=$('#location').val();
+  let delivery= $('#delivery').val();
+
+  if (delivery==='home-d'){
+    //  address input fields validation
+
+    if(userName===""){
+      alert("Enter your name");
+    }else if(userNo===''){
+      alert('Enter you phone number')
+    }else if(userLocation===''){
+      alert('Enter your location')
+    }else{
+      $('.oderRow').hide();
+      $('#output').fadeIn(1000);
+      $('#resetBtn').fadeIn(1000);
+      
+
+      $('#output').text(`Dear ${userName}, Your Order has been received and will be delivered to ${userLocation} within 30min. Your total charge is Ksh.${total}`)
+
+      // $('#resetBtn').click(()=>{
+      //   $('.oderRow').fadeIn(500);
+      // })
+
+    }
+  }else{
+    $('.oderRow').hide();
+    $('#output').fadeIn();
+    $('#resetBtn').fadeIn(1000);
+
+    $('#output').text(`Dear Customer, Your Order has been received. You can pick it within 30min. Your total charge is ${total}`)
+
+    // $('#resetBtn').click(()=>{
+    //   $('.oderRow').fadeIn(500);
+    // })
+
+  }
 
 
+
+  
+
+  //address input fields validation
+
+  // if(userName===""){
+  //   alert("Enter your name");
+  // }else if(userNo===''){
+  //   alert('Enter you phone number')
+  // }else if(userLocation===''){
+  //   alert('Enter your location')
+  // }else{
+
+  // }
+})
+
+
+
+
+
+
+  // let checkout=0;
+  // checkout= checkout+total;
+
+  // console.log(checkout)
   //  let agsum=0;
   //  let grand=document.querySelectorAll('.totalVal');
 
@@ -166,3 +243,7 @@ console.log(newUserOrderedPizza.getDeliveryPrice())
   // console.log($('form#user-order-form').serializeArray())
 })
 
+
+$('#resetBtn').click(()=>{
+  $('.oderRow').fadeIn(500);
+})
