@@ -249,3 +249,13 @@ $('#resetBtn').click(()=>{
   $('#output').fadeOut();
   $('#resetBtn').fadeOut();
 })
+
+$('#feedback').submit((e)=>{
+  let userName=$("#uName").val();
+  let userEmail=$("#eMail").val();
+  let message=$('#msg').val();
+
+    alert(`Dear ${userName}, Your feedback has been received. Thank you for contacting Charbec Pizza.`)
+    
+  e.preventDefault();
+})

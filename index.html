@@ -227,16 +227,16 @@
 
       <div class="col-md-4 py-5">
           <h4>Leave a <span>Message</span></h4>
-        <form action="https://formspree.io/f/xlezlznl" class="form" method="post">
+        <form action="https://formspree.io/f/xlezlznl" id="feedback" class="form" method="post">
          
             <label for="uName" class="form-input-text mb-2">Name</label>
-            <input type="text" name="user-name" id="uName" class="form-control comment-sect mb-2" placeholder="Enter your name...">
+            <input type="text" name="user-name" id="uName" class="form-control comment-sect mb-2" placeholder="Enter your name..." required>
 
             <label for="eMail" class="form-input-text mb-2">Email</label>
-            <input type="email" name="user-name" id="eMail" class="form-control comment-sect mb-2" placeholder="Enter your email...">
+            <input type="email" name="user-name" id="eMail" class="form-control comment-sect mb-2" placeholder="Enter your email..." required>
 
             <label for="eMail" class="form-input-text mb-2">Comments</label>
-            <textarea name="Message" id="" class="form-control comment-sect mb-2" rows="5" placeholder="Your comments..."></textarea>
+            <textarea name="Message" id="msg" class="form-control comment-sect mb-2" rows="5" placeholder="Your comments..." required></textarea>
 
             <input type="submit" value="SEND" class="btn btn-outline-info sendBtn">
           
