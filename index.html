@@ -131,8 +131,8 @@
             <label for="delivery" class="input-group-text">Delivery Mode</label>
             <select name="" id="delivery" class="form-select">
               <option selected>Choose delivery...</option>
-              <option value="">Home delivery</option>
-              <option value="">Hand-Picked</option>
+              <option value="home-d">Home delivery</option>
+              <option value="hand-p">Hand-Picked</option>
             </select>
           </div>
           <input type="submit" value="CHECKOUT" class="btn btn-outline-info my-3 sendBtn" id="checkoutBtn">
@@ -179,7 +179,7 @@
 
         <input type="submit" value="ADD" class="btn btn-outline-info my-3 hide-elem">
 
-        <form class="hide-elem">
+        <form class="hide-elem" id="delivery-address">
           <h3 class="text-center">Delivery Address</h3>
           <div>
             <label for="fName" class="form-label">Name :</label>

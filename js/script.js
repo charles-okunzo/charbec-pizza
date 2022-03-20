@@ -27,7 +27,15 @@ function mySlideshow(){
 
 window.onload=mySlideshow();
 
+//order form submission
 $('#user-order-form').submit((e)=>{
   e.preventDefault();
   $('#checkoutBtn').toggle();
+
+  let delivery= $('#delivery').val();
+  if(delivery==='home-d'){
+    $('#delivery-address').show();
+  }else{
+    $('#delivery-address').hide();
+  }
 })
