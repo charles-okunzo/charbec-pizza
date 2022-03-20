@@ -84,10 +84,12 @@
           <div class="input-group mb-3">
             <label for="size" class="input-group-text"> Pizza Size</label>
             <select name="" id="size" class="form-select">
-              <option selected>Choose size...</option>
-              <option value="large">Large @ Ksh.1,500</option>
-              <option value="medium">Medium @ Ksh. 900</option>
-              <option value="small">Small @ Ksh.650</option>
+              <optgroup>
+                <option selected>Choose size...</option>
+                <option value="Large">Large @ Ksh.1,500</option>
+                <option value="Medium">Medium @ Ksh. 900</option>
+                <option value="Small">Small @ Ksh.650</option>
+              </optgroup>
             </select>
           </div>
 
@@ -95,9 +97,9 @@
             <label for="crusts" class="input-group-text">Crusts</label>
             <select name="" id="crusts" class="form-select">
               <option selected>Choose Crust...</option>
-              <option value="">Crispy @ Ksh.200</option>
-              <option value="">Stuffed @ Ksh.300</option>
-              <option value="">Glutten-free @ Ksh.250</option>
+              <option value="Crispy">Crispy @ Ksh.200</option>
+              <option value="Stuffed">Stuffed @ Ksh.300</option>
+              <option value="Glutten-free">Glutten-free @ Ksh.250</option>
             </select>
           </div>
 
@@ -108,23 +110,23 @@
 
           <label>Select Toppings</label>
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" name="toppings" id="papperoni">
+            <input type="checkbox" class="form-check-input" name="Papperoni" id="papperoni" value="Papperoni">
             <label for="papperoni" class="form-check-label">Papperoni</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" name="toppings" id="mushroom">
+            <input type="checkbox" class="form-check-input" name="Mushroom" id="mushroom" value="Mushroom">
             <label for="mushroom" class="form-check-label">Mushroom</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" name="toppings" id="cheese">
+            <input type="checkbox" class="form-check-input" name="Extra-Cheese" id="cheese" value="Extra-Cheese">
             <label for="cheese" class="form-check-label">Extra-Cheese</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" name="toppings" id="sausages">
+            <input type="checkbox" class="form-check-input" name="Sausages" id="sausages" value="Sausages">
             <label for="sausages" class="form-check-label">Sausages</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" name="toppings" id="pepper">
+            <input type="checkbox" class="form-check-input" name="Green Pepper" id="pepper" value="Green Pepper">
             <label for="pepper" class="form-check-label">Green Pepper</label>
           </div>
           <div class="input-group mb-3">

@@ -1,4 +1,4 @@
-
+//slideshow effect
 let i=0;
 let images=[];
 const time=3000;
@@ -27,11 +27,53 @@ function mySlideshow(){
 
 window.onload=mySlideshow();
 
+//constructor function
+
+function Pizza(size, crust, toppings, units, delivery){
+  this.size=size;
+  this.crust=crust;
+  this.toppings=toppings;
+  this.units=units;
+  this.delivery=delivery;
+}
+
+//prototypes to get the prices
+
+//size price
+Pizza.prototype.getSizePrice= function(){
+  if(this.size==='Large'){
+    return 1500;
+  }else if(this.size==="Medium"){
+    return 900;
+  }else{
+    return 650;
+  }
+}
+
+//crust price
+Pizza.prototype.getCrustPrice=function(){
+  if(this.crust==="Crispy"){
+    return 200;
+  }else if(this.crust==="Stuffed"){
+    return 300;
+  }else{
+    return 250;
+  }
+}
+
+Pizza.prototype.getToppingsPrice=function(){
+  let arr =[];
+  arr.push(this.toppings);
+  let toppingsAmt= arr.length;
+  return toppingsAmt*200;
+}
+
+
 //order form submission
 $('#user-order-form').submit((e)=>{
   e.preventDefault();
-  $('#checkoutBtn').fadeToggle(1000);
-
+  // $('#checkoutBtn').fadeToggle(1000);
+  
   $('#order-display').slideToggle(1000);
 
   $('#addBtn').slideToggle(1000);
@@ -44,4 +86,10 @@ $('#user-order-form').submit((e)=>{
   }else{
     $('#delivery-address').hide();
   }
+
+  //get user input value
+let userInputSize= $('#size').val();
+
+let userInputCrust=$('')
+// console.log($('form#user-order-form').serializeArray())
 })
