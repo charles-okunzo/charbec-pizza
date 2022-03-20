@@ -26,3 +26,8 @@ function mySlideshow(){
 };
 
 window.onload=mySlideshow();
+
+$('#user-order-form').submit((e)=>{
+  e.preventDefault();
+  $('#checkoutBtn').toggle();
+})
