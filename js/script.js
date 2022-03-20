@@ -30,11 +30,17 @@ window.onload=mySlideshow();
 //order form submission
 $('#user-order-form').submit((e)=>{
   e.preventDefault();
-  $('#checkoutBtn').toggle();
+  $('#checkoutBtn').fadeToggle(1000);
+
+  $('#order-display').slideToggle(1000);
+
+  $('#addBtn').slideToggle(1000);
+
+  $('#order-confirmBtn').slideToggle(1000)
 
   let delivery= $('#delivery').val();
   if(delivery==='home-d'){
-    $('#delivery-address').show();
+    $('#delivery-address').slideToggle(1000);
   }else{
     $('#delivery-address').hide();
   }
