@@ -51,3 +51,7 @@ footer{
 .hide-elem{
   display: none;
 }
+
+.grandTotal td{
+  color: rgb(32, 255, 32);
+}

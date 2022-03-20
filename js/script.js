@@ -56,11 +56,14 @@ Pizza.prototype.getCrustPrice=function(){
     return 200;
   }else if(this.crust==="Stuffed"){
     return 300;
-  }else{
+  }else if(this.crust==="Glutten-free"){
     return 250;
+  }else{
+    return 0;
   }
 }
 
+//toppings price
 Pizza.prototype.getToppingsPrice=function(){
   let sumTotal=0;
   this.toppings.forEach(item => {
@@ -69,27 +72,17 @@ Pizza.prototype.getToppingsPrice=function(){
   return sumTotal;
 }
 
+//Total price
+Pizza.prototype.calcTotalPrice=function(){
+  let totalPrice=(this.getSizePrice()+this.getCrustPrice()+this.getToppingsPrice())*this.units;
+  return totalPrice;
+}
+
 
 //order form submission
 $('#user-order-form').submit((e)=>{
   e.preventDefault();
-  // $('#checkoutBtn').fadeToggle(1000);
-  
-  $('#order-display').slideToggle(1000);
-
-  $('#addBtn').slideToggle(1000);
-
-  $('#order-confirmBtn').slideToggle(1000)
-
-
-  //show form for home delivery && hide form for hand pickup
-  let delivery= $('#delivery').val();
-  if(delivery==='home-d'){
-    $('#delivery-address').slideToggle(1000);
-  }else{
-    $('#delivery-address').hide();
-  }
-
+ 
   //get user input value
   let userInputSize= $('#size').val();
 
@@ -97,14 +90,33 @@ $('#user-order-form').submit((e)=>{
   //.serializeArray returns an array of input objects.
   let userInputToppings= $('form#user-order-form').serializeArray();
 
-  let unitsOrdered= parseFloat($('#noOfPizza').val());
+  let unitsOrdered= parseInt($('#noOfPizza').val());
 
-  //create a new user array object
+  let delivery= $('#delivery').val();
 
-  let newUserOrderedPizza= new Pizza(userInputSize, userInputCrust, userInputToppings, unitsOrdered, delivery);
+ // $('#checkoutBtn').fadeToggle(1000);
+      
+    $('#order-display').slideToggle(1000);
 
-  console.log(newUserOrderedPizza.getToppingsPrice())
+    $('#addBtn').slideToggle(1000);
 
+    $('#order-confirmBtn').slideToggle(1000)
+
+
+    //show form for home delivery && hide form for hand pickup
+    if(delivery==='home-d'){
+      $('#delivery-address').slideToggle(1000);
+    }else{
+      $('#delivery-address').hide();
+    }
+
+
+     //create a new user array object
+    let newUserOrderedPizza= new Pizza(userInputSize, userInputCrust, userInputToppings, unitsOrdered, delivery);
+    //total for each order
+    let total=newUserOrderedPizza.calcTotalPrice();
+
+    $('tbody').prepend(`<tr><td>${userInputSize}</td><td>${userInputCrust}</td><td>${userInputToppings}</td><td>${unitsOrdered}</td><td>${total}</td></tr>`)
 
 
 
