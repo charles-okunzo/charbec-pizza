@@ -147,6 +147,15 @@ $('#user-order-form').submit((e)=>{
 
     $('.g-total').text(total);
 
+    //calc delivery amout
+
+    let deliveryAmout= newUserOrderedPizza.getDeliveryPrice();
+
+    let totalPlusDelivery=deliveryAmout+total;
+
+    //append delivery price
+    $('#delPriceDisplay').append(`**You will be charges Ksh.${deliveryAmout} for delivery**`)
+
 
 
 
@@ -182,11 +191,7 @@ $('#order-confirmBtn').click(()=>{
       $('#resetBtn').fadeIn(1000);
       
 
-      $('#output').append(`<span>SUCCESS!</span> <br>Dear ${userName}, Your Order has been received and will be delivered to ${userLocation} within 30min. Your total charge is Ksh.${total}`)
-
-      // $('#resetBtn').click(()=>{
-      //   $('.oderRow').fadeIn(500);
-      // })
+      $('#output').append(`<span>SUCCESS!</span> <br>Dear ${userName}, Your Order has been received and will be delivered to ${userLocation} within 30min. Your total charge is Ksh.${totalPlusDelivery}`)
 
     }
   }else{
@@ -256,6 +261,12 @@ $('#feedback').submit((e)=>{
   let message=$('#msg').val();
 
     alert(`Dear ${userName}, Your feedback has been received. Thank you for contacting Charbec Pizza.`)
-    
+
   e.preventDefault();
+})
+
+$('.orderBtn').click(()=>{
+  let orderform=document.getElementById("order-form");
+
+  orderform.scrollIntoView();
 })

@@ -81,3 +81,16 @@ footer{
   font-size: 20px;
   color: #ff304f;
 }
+
+#delPriceDisplay{
+  color: #ff4460;
+}
+
+@media only screen and (max-width:992px){
+  #offcanvasNavbar{
+    background-color: #212529;
+  }
+  .btn-close{
+    background-color: #fff;
+  }
+}

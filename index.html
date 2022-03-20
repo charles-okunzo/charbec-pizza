@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Cookie&family=Dancing+Script:wght@400;700&family=Inspiration&family=Pacifico&family=Poppins:wght@100;300&family=Satisfy&family=Shadows+Into+Light&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/85217334a5.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="./assets/pizza-09.jpg" type="image/x-icon">
   <title>Charbec Pizza</title>
 </head>
 <body>
@@ -37,7 +38,7 @@
                     <a class="nav-link  text-white px-4" href="#">Contact Us</a>
                   </li>
                   <li class="nav-item btn btn-outline-info">
-                    <a class="nav-link  text-white mx-4" href="#">Order Now</a>
+                    <a class="nav-link  text-white mx-4" class="order-form">Order Now</a>
                   </li>
                 </ul>
               </div>
@@ -50,7 +51,9 @@
             <div class="col-md-9">
               <p class="display-5 fw-bold text-center">Welcome!</p>
               <p class="text-center display-6">People dissappoint, but <span>pizza</span> never does...</p>
+              <!-- <button class="btn btn-outline-info orderBtn">ORDER NOW</button> -->
             </div>
+            
           </div>
         </div>
 
@@ -76,7 +79,7 @@
     </div>
   </div>
 
- <div class=" order-form">
+ <div class=" order-form" id="order-form">
   <div class="container">
     <div class="row oderRow">
       <div class="col-md-6 mt-4">
@@ -169,6 +172,7 @@
 
         <form class="hide-elem" id="delivery-address">
           <h3 class="text-center">Delivery Address</h3>
+          <label class="form-label text-center" id="delPriceDisplay"></label>
           <div>
             <label for="fName" class="form-label">Name :</label>
             <input type="text" class="form-control" id="fName" placeholder="
@@ -233,7 +237,7 @@
             <input type="text" name="user-name" id="uName" class="form-control comment-sect mb-2" placeholder="Enter your name..." required>
 
             <label for="eMail" class="form-input-text mb-2">Email</label>
-            <input type="email" name="user-name" id="eMail" class="form-control comment-sect mb-2" placeholder="Enter your email..." required>
+            <input type="email" name="user-email" id="eMail" class="form-control comment-sect mb-2" placeholder="Enter your email..." required>
 
             <label for="eMail" class="form-input-text mb-2">Comments</label>
             <textarea name="Message" id="msg" class="form-control comment-sect mb-2" rows="5" placeholder="Your comments..." required></textarea>
