@@ -193,10 +193,11 @@ $('#order-confirmBtn').click(()=>{
 
       $('#output').append(`<span>SUCCESS!</span> <br><div class="output-par">Dear ${userName}, Your Order has been received and will be delivered to ${userLocation} within 30min. Your total charge is Ksh.${totalPlusDelivery}</div>`)
       
-      let outputSec=document.getElementById("output");
+    }
+
+      outputSec=document.getElementById("output");
 
       outputSec.scrollIntoView();
-    }
   }else{
     $('.oderRow').hide();
     $('#output').fadeIn(500);
