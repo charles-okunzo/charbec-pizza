@@ -206,7 +206,9 @@ $('#order-confirmBtn').click(()=>{
     // })
 
   }
+  let outputSec=document.getElementById("output");
 
+  outputSec.scrollIntoView();
 
 
   
