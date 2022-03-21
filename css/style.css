@@ -52,8 +52,8 @@ footer{
   display: none;
 }
 
-.grandTotal td{
-  color: rgb(32, 255, 32);
+.grandTotal td, .output-par{
+  color: rgb(32, 255, 32) ;
 }
 
 .btn-outline-info{

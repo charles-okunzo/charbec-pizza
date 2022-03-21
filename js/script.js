@@ -191,7 +191,7 @@ $('#order-confirmBtn').click(()=>{
       $('#resetBtn').fadeIn(1000);
       
 
-      $('#output').append(`<span>SUCCESS!</span> <br>Dear ${userName}, Your Order has been received and will be delivered to ${userLocation} within 30min. Your total charge is Ksh.${totalPlusDelivery}`)
+      $('#output').append(`<span>SUCCESS!</span> <br><div class="output-par">Dear ${userName}, Your Order has been received and will be delivered to ${userLocation} within 30min. Your total charge is Ksh.${totalPlusDelivery}</div>`)
 
     }
   }else{
@@ -199,7 +199,7 @@ $('#order-confirmBtn').click(()=>{
     $('#output').fadeIn(500);
     $('#resetBtn').fadeIn(500);
 
-    $('#output').append(`<span>SUCCESS!</span> <br> Dear Customer, Your Order has been received. You can pick it within 30min. Your total charge is Ksh.${total}`)
+    $('#output').append(`<span>SUCCESS!</span> <br> <div class="output-par">Dear Customer, Your Order has been received. You can pick it within 30min. Your total charge is Ksh.${total}</div>`)
 
     // $('#resetBtn').click(()=>{
     //   $('.oderRow').fadeIn(500);
