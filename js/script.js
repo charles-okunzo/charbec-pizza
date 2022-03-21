@@ -154,7 +154,7 @@ $('#user-order-form').submit((e)=>{
     let totalPlusDelivery=deliveryAmout+total;
 
     //append delivery price
-    $('#delPriceDisplay').append(`**You will be charges Ksh.${deliveryAmout} for delivery**`)
+    $('#delPriceDisplay').append(`**You will be charged Ksh.${deliveryAmout} for delivery**`)
 
 
 
@@ -253,6 +253,14 @@ $('#resetBtn').click(()=>{
   $('.oderRow').fadeIn();
   $('#output').fadeOut();
   $('#resetBtn').fadeOut();
+
+  window.location.href="index.html";
+
+  let orderform=document.getElementById("order-form");
+
+  orderform.scrollIntoView();
+
+
 })
 
 $('#feedback').submit((e)=>{
@@ -265,7 +273,9 @@ $('#feedback').submit((e)=>{
   e.preventDefault();
 })
 
-$('.orderBtn').click(()=>{
+
+let orderBtn= document.getElementById
+$('#orderBtn').click(()=>{
   let orderform=document.getElementById("order-form");
 
   orderform.scrollIntoView();
